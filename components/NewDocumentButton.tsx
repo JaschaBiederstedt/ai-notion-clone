@@ -3,6 +3,7 @@
 import { Button } from '@/components/ui/button';
 import { useRouter } from 'next/navigation';
 import { useTransition } from 'react';
+import { createNewDocument } from '@/actions/actions';
 
 const NewDocumentButton = () => {
   const router = useRouter();
