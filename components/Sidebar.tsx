@@ -70,20 +70,24 @@ const Sidebar = () => {
     <>
       <NewDocumentButton />
 
-      {/* My Documents */}
-      {groupedData.owner.length === 0 ? (
-        <h2 className='font-semibold text-sm text-gray-500'>
-          No documents found
-        </h2>
-      ) : (
-        <>
-          <h2 className='font-semibold text-sm text-gray-500'>My documents</h2>
-          {groupedData.owner.map(doc => (
-            <p>{doc.roomId}</p>
-            // <SidebarOption key={doc.id} id={doc.id} href={`/doc/${doc.id}`} />
-          ))}
-        </>
-      )}
+      <div className='flex py-4 flex-col space-y-4 md:max-w-36'>
+        {/* My Documents */}
+        {groupedData.owner.length === 0 ? (
+          <h2 className='font-semibold text-sm text-gray-500'>
+            No documents found
+          </h2>
+        ) : (
+          <>
+            <h2 className='font-semibold text-sm text-gray-500'>
+              My documents
+            </h2>
+            {groupedData.owner.map(doc => (
+              <p>{doc.roomId}</p>
+              // <SidebarOption key={doc.id} id={doc.id} href={`/doc/${doc.id}`} />
+            ))}
+          </>
+        )}
+      </div>
 
       {/* Shared with me */}
       {/* List... */}
